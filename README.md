@@ -3,7 +3,7 @@
 
 Minimal Implimentation of VCRec (2024) for collapse prevention.
 
-`/layer.py` Direct Gradient Manipulation implimentation of VCReg.
+`/layer.py` Direct Gradient Manipulation implimentation of VCReg. Put this between your blocks.
 
 `/loss.py` VICReg loss, for applying this regularization to an output represenation.
 
