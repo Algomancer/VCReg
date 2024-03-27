@@ -5,6 +5,8 @@ Minimal Implimentation of VCRec (2024) for collapse prevention.
 
 `/layer.py` Direct Gradient Manipulation implimentation of VCReg. Put this between your blocks.
 
+`flag = demean_undo` Idea to enable this to slot in to pretrained models. Untested.
+
 `/loss.py` VICReg loss, for applying this regularization to an output represenation.
 
 
