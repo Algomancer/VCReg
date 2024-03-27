@@ -10,6 +10,8 @@ Minimal Implimentation of VCRec (2024) for collapse prevention.
 
 ![vis](https://github.com/Algomancer/VCReg/assets/13579432/12ddbf72-94ce-4dbb-ba88-6fb925ce9e72)
 
+Original Paper:
+
 ```
 @misc{zhu2024variancecovariance,
       title={Variance-Covariance Regularization Improves Representation Learning}, 
