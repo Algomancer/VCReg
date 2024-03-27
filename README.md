@@ -3,6 +3,9 @@
 
 Minimal Implimentation of VCRec (2024) for collapse prevention.
 
+`/layer.py` Direct Gradient Manipulation implimentation of VCReg.
+`/loss.py` VICReg loss, for applying this regularization to an output represenation.
+
 
 ![vis](https://github.com/Algomancer/VCReg/assets/13579432/12ddbf72-94ce-4dbb-ba88-6fb925ce9e72)
 
