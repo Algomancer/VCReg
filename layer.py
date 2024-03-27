@@ -6,7 +6,7 @@ import torch.nn.functional as F
 
 class _VCReg(Function):
     @staticmethod
-    def forward(ctx, input, var, cov, epsilon):
+    def forward(ctx, input, var, cov, epsilon, demean_undo=False):
         # Batch demean the input
         mean_per_channel = input.mean(dim=(0, 1), keepdim=True)
         demeaned_input = input - mean_per_channel
@@ -15,6 +15,8 @@ class _VCReg(Function):
         ctx.var = var
         ctx.cov = cov
         ctx.epsilon = epsilon
+        if demean_undo:
+            return input.clone()
         return demeaned_input.clone()
 
     @staticmethod
