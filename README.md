@@ -7,7 +7,7 @@ Minimal Implimentation of VCRec (2024) for collapse prevention.
 
 `flag = demean_undo` Idea to enable this to slot in to pretrained models. Untested.
 
-`/loss.py` VICReg loss, for applying this regularization to an output represenation.
+`/loss.py` VICReg loss, for applying this regularization to an output representation.
 
 
 ![vis](https://github.com/Algomancer/VCReg/assets/13579432/12ddbf72-94ce-4dbb-ba88-6fb925ce9e72)
