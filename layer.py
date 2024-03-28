@@ -7,17 +7,15 @@ import torch.nn.functional as F
 class _VCReg(Function):
     @staticmethod
     def forward(ctx, input, var, cov, epsilon, demean_undo=False):
-        # Batch demean the input
-        mean_per_channel = input.mean(dim=(0, 1), keepdim=True)
-        demeaned_input = input - mean_per_channel
+        # assumes inputs have a mean of 0.0, layernorm or w/e you want.
         
-        ctx.save_for_backward(demeaned_input)
+        ctx.save_for_backward(input)
         ctx.var = var
         ctx.cov = cov
         ctx.epsilon = epsilon
         if demean_undo:
             return input.clone()
-        return demeaned_input.clone()
+        return input.clone()
 
     @staticmethod
     def backward(ctx, grad_output):
