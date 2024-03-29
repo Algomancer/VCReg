@@ -6,7 +6,7 @@ import torch.nn.functional as F
 
 class _VCReg(Function):
     @staticmethod
-    def forward(ctx, input, var, cov, epsilon, demean_undo=False):
+    def forward(ctx, input, var, cov, epsilon):
         # assumes inputs have a mean of 0.0, layernorm or w/e you want.
         
         ctx.save_for_backward(input)
