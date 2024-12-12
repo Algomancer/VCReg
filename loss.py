@@ -31,7 +31,7 @@ class VICLoss(nn.Module):
         variance_loss = (x_loss + y_loss) / 2.0
 
     
-        covariance_loss = covariance_loss(x=x) + covariance_loss(x=x)
+        covariance_loss = covariance_loss(x=x) + covariance_loss(x=y)
         loss = self.invariance_term * invariance_loss + self.variance_term * variance_loss + self.covariance_term * covariance_loss
         return loss, (invariance_loss, variance_loss, covariance_loss)
 
