@@ -46,11 +46,11 @@ class VICLoss(nn.Module):
         y_loss = torch.mean(F.relu(1.0 - std_y))
 
         variance_loss = (x_loss + y_loss) / 2.0
-
     
-        covariance_loss = covariance_loss(x=x) + covariance_loss(x=y)
-        loss = self.invariance_term * invariance_loss + self.variance_term * variance_loss + self.covariance_term * covariance_loss
-        return loss, (invariance_loss, variance_loss, covariance_loss)
+        covariance_loss_ = covariance_loss(x=x) + covariance_loss(x=y)
+        loss = self.invariance_term * invariance_loss + self.variance_term * variance_loss + self.covariance_term * covariance_loss_
+        return loss, (invariance_loss, variance_loss, covariance_loss_)
+
 
 
 
