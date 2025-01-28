@@ -20,7 +20,7 @@ class VICLoss(nn.Module):
         self.eps = eps
 
     def forward(self, x: torch.Tensor, y: torch.Tensor) -> torch.Tensor:
-        invariance_loss =  F.mse_loss(x=x, y=y)
+        invariance_loss =  F.mse_loss(x, y)
 
         std_x = torch.sqrt(x.var(dim=0) + self.eps)
         x_loss = torch.mean(F.relu(1.0 - std_x))
